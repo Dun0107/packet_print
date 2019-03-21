@@ -19,9 +19,9 @@ void macprint(char *p)
 void tcpprint(char *p)
 {
     uint8_t dst_port[2] = {p[36], p[37]};
-    printf("dip: %d\n", dst_port[0]*16*16+dst_port[1]);
+    printf("dip: %d\n", (dst_port[0]<<8)+dst_port[1]);
     uint8_t src_port[2] ={p[34], p[35]};
-    printf("sip: %d\n", src_port[0]*16*16+src_port[1]);
+    printf("sip: %d\n", (src_port[0]<<8)+src_port[1]);
 }
 
 void httpprint(char *p)
